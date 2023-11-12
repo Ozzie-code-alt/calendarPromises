@@ -2,7 +2,7 @@
   "name": "calendar",
   "version": "0.1.0",
   "private": true,
-  "proxy":"http://localhost:5000",
+  "proxy": "http://localhost:5000",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -16,7 +16,8 @@
     "next": "14.0.2",
     "react": "^18",
     "react-datetime": "^3.2.0",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-modal": "^3.16.1"
   },
   "devDependencies": {
     "@types/node": "^20",
