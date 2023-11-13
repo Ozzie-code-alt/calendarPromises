@@ -14,10 +14,11 @@ interface EventObject {
 const Calendar: React.FC=() => {
   const [modalOpen, setModalOPen] = useState<boolean>(false);
 
+  // const calendarHEHE = React.createRef() 
   const calendarRef = useRef<FullCalendar>(null);
 
   const onEventAdded = (event:EventObject) => {
-    let calendarApi = calendarRef.current.getApi();
+    let calendarApi = this.calendarRef.current.getApi();
     calendarApi.addEvent(event);
     console.log(event)
   };
