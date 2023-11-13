@@ -4,12 +4,19 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import AddEvents from "./AddEventModal";
 
-const Calendar = () => {
-  const [modalOpen, setModalOPen] = useState(false);
+interface EventObject {
+  title: string,
+  start: Date,
+  emd: Date
+}
 
-  const calendarRef = useRef(null);
 
-  const onEventAdded = (event) => {
+const Calendar: React.FC=() => {
+  const [modalOpen, setModalOPen] = useState<boolean>(false);
+
+  const calendarRef = useRef<FullCalendar>(null);
+
+  const onEventAdded = (event:EventObject) => {
     let calendarApi = calendarRef.current.getApi();
     calendarApi.addEvent(event);
     console.log(event)
@@ -31,7 +38,7 @@ const Calendar = () => {
         <AddEvents
           isOpen={modalOpen}
           onClose={() => setModalOPen(false)}
-          onEventAdded={(event) => onEventAdded(event)
+          onEventAdded={(event:EventObject) => onEventAdded(event)
             }
         />
       </section>

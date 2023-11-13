@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Modal from "react-modal";
 import Datetime from "react-datetime";
-
+import moment from "moment";
 
 const AddEvents = ({ isOpen, onClose, onEventAdded }) => {
   const [title, setTitle] = useState("");
@@ -9,9 +9,10 @@ const AddEvents = ({ isOpen, onClose, onEventAdded }) => {
   const [end, setEnd] = useState(new Date());
 
   const onSubmit = (event) => {
+
     event.preventDefault();
-    const startDate = start.toDate();
-    const endDate = end.toDate();
+    const startDate = moment(start).toDate()
+    const endDate = moment(end).toDate()
     onEventAdded({
       title,
       start:startDate,
