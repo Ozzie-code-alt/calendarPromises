@@ -5,6 +5,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import AddEvents from "./AddEventModal";
 import axios from "axios"
 import moment from "moment";
+import { DatesSetArg, EventAddArg } from "@fullcalendar/core/index.js";
 
 interface EventObject {
   title: string,
@@ -30,7 +31,7 @@ const Calendar: React.FC=() => {
   };
 
 
-  const handleEventAdd  = async(data)=>{
+  const handleEventAdd  = async(data:EventAddArg)=>{
     // await axios.post("/api/calendar/create-event", data.event)
     
     // await axios.post("/api/calendar/create-event", data.event).then((response) => {
@@ -43,7 +44,7 @@ const Calendar: React.FC=() => {
 
   }
 
-    async function handleDateSet(data){
+    async function handleDateSet(data:DatesSetArg){
     console.log(data)
     // const response = await axios.get("/api/calendar/get-events?start="+moment(data.start).toISOString()+"&end="+moment(data.end).toISOString())
     // Update the URLs with the correct server address and port
