@@ -40,7 +40,7 @@ const Calendar: React.FC=() => {
     //   console.log(error);
     // });
     console.log(data)
-    await axios.post("http://localhost:5000/api/calendar/create-event", data.event);
+    await axios.post("http://localhost:3000/api/events", data.event);
 
   }
 
@@ -48,7 +48,7 @@ const Calendar: React.FC=() => {
     console.log(data)
     // const response = await axios.get("/api/calendar/get-events?start="+moment(data.start).toISOString()+"&end="+moment(data.end).toISOString())
     // Update the URLs with the correct server address and port
-    const response = await axios.get("http://localhost:5000/api/calendar/get-events?start=" + moment(data.start).toISOString() + "&end=" + moment(data.end).toISOString())
+    const response = await axios.get("http://localhost:3000/api/events?start=" + moment(data.start).toISOString() + "&end=" + moment(data.end).toISOString())
 
     setEvents(response.data)
     console.log(response.data)
